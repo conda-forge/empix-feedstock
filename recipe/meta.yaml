@@ -1,5 +1,5 @@
 {% set name = "empix" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/empix-{{ version }}.tar.gz
-  sha256: 21754c24957319dcf71c4402add4f41ce9b960941b51e0f06e3048bb6fa08ac0
+  sha256: 8c7945b6a41d20db2047fce01440a38ffbd9ed7f33c9a36ed2302aa78adde101
 
 build:
   noarch: python
