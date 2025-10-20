@@ -1,5 +1,5 @@
 {% set name = "empix" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/empix-{{ version }}.tar.gz
-  sha256: 8c7945b6a41d20db2047fce01440a38ffbd9ed7f33c9a36ed2302aa78adde101
+  sha256: f653534a2988b38a1ef583f7d5b8b6bcc086bdfbe27392ba4431c336eed29da8
 
 build:
   noarch: python
@@ -16,17 +16,18 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - wheel
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - czekitout
     - fancytypes >=1.0.0
     - hyperspy
     - pyfai
+    - numba
 
 test:
   imports:
@@ -34,6 +35,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
